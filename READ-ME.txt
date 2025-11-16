@@ -1,0 +1,142 @@
+🌟 GH Enterprises – Official Website
+Precision Interior Job Work | B2B2C Manufacturing | Powered by TENSPICK
+🚀 Overview
+
+The GH Enterprises Website is a modern, responsive, and performance-first platform built to showcase professional interior job-work services.
+It highlights industry-grade processes like Pressing, Cutting, Edge Banding, Boring, and Packing, designed for interior designers and manufacturers who demand quality and precision.
+
+This website is completely built using HTML, CSS, and Vanilla JavaScript, ensuring speed, stability, and simplicity.
+
+🎨 Key Features
+
+⚡ Sleek, modern, and responsive UI
+
+🎞️ Smooth carousel animations & dropdown interactions
+
+🧩 Clean code structure (HTML + CSS + JS)
+
+📱 Mobile-friendly layout
+
+📌 SEO-optimized tags
+
+🧭 Well-organized service workflow
+
+🌐 Lightweight for fast loading
+
+✨ Designed & Developed by TENSPICK
+
+🛠️ Tech Stack
+Technology	Purpose
+HTML5	Website structure & semantic layout
+CSS3	Styling, UI design, animations
+JavaScript (Vanilla JS)	Interactive elements & dynamic behavior
+📂 Project Structure
+GH-Enterprises/
+│── index.html
+│── /assets
+│     ├── /images
+│     └── /icons
+│── /css
+│     └── style.css
+│── /js
+│     └── main.js / script.js
+└── README.md
+
+🧱 Website Sections
+1️⃣ Hero / Landing Section
+
+Bold tagline
+
+Animation-enhanced carousel
+
+Clean CTA buttons
+
+2️⃣ About GH Enterprises
+
+Company background
+
+Experience in interior job work
+
+Why interior designers trust us
+
+3️⃣ Job-Work Stages
+
+Each stage is displayed with icons, images & clear content:
+
+🪵 Pressing
+
+High-precision laminate pressing for flawless finish.
+
+✂️ Cutting
+
+Accurate sizing using advanced machinery for perfect fitment.
+
+📏 Edge Banding
+
+Smooth, durable edge finishing using industry-grade PVC strips.
+
+🛠️ Boring
+
+Precision drilling for cabinets, modular fittings & designer layouts.
+
+📦 Packing
+
+Safe, secure, and professional packaging for delivery.
+
+4️⃣ Services Section
+
+Complete interior job-work outsourcing
+
+High-precision manufacturing for designers (B2B2C)
+
+Modular interior fabrication support
+
+5️⃣ Contact Section
+
+Business email
+
+Mobile number
+
+Physical location
+
+Simple contact form
+
+💻 How to Run the Project
+▶️ Local Setup
+git clone https://github.com/TENSPICK/GH-Enterprises.git
+
+
+Open index.html in your browser — that’s it.
+
+▶️ Hosting on GitHub Pages
+
+Go to: Settings → Pages
+
+Select: main → /root
+
+Save
+
+Access:
+
+https://<your-username>.github.io/GH-Enterprises/
+
+🧩 Customization
+
+You can modify:
+
+Carousel images/text
+
+Service descriptions
+
+Colors & theme (CSS)
+
+Logos & branding assets
+
+Let me know and I will help customize any part.
+
+✨ Designed & Developed by TENSPICK
+Innovations Behind Imaginations
+
+This project is proudly built under the creative vision and technical execution of TENSPICK,
+ delivering future-ready digital experiences for businesses, startups, and enterprises.
+This project is licensed under the MIT License.

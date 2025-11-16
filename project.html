@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Our Projects - GH Enterprises Interior Design</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Teko:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Custom Portfolio Animations -->
+    <style>
+        .portfolio-container {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-top: 2rem;
+        }
+        @media (max-width: 1024px) {
+            .portfolio-container {
+                grid-template-columns: 300px 1fr;
+                gap: 2.5rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .portfolio-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        .category-carousel {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            max-height: calc(15 * 70px);
+            overflow-y: auto;
+            padding-right: 0.5rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) #f0f0f0;
+        }
+        .category-carousel::-webkit-scrollbar {
+            width: 6px;
+        }
+        .category-carousel::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 10px;
+        }
+        .category-carousel::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+        .category-carousel::-webkit-scrollbar-thumb:hover {
+            background: #c99819;
+        }
+        .category-btn {
+            padding: 0.9rem 1.2rem;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            border: 2px solid #ddd;
+            border-radius: 0.6rem;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-weight: 600;
+            color: #1a1a1a;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            font-size: 0.9rem;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .category-btn::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--primary) 0%, #e6c94a 100%);
+            transition: width 0.5s ease;
+            z-index: -1;
+        }
+        .category-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -30px;
+            width: 30px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: skewX(-20deg);
+            transition: right 0.5s ease;
+            z-index: -1;
+        }
+        .category-btn:hover,
+        .category-btn.active {
+            border-color: var(--primary);
+            color: white;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            transform: translateX(6px);
+        }
+        .category-btn:hover::before,
+        .category-btn.active::before {
+            width: 100%;
+        }
+        .category-btn:hover::after {
+            right: 100%;
+        }
+        .category-btn i {
+            margin-right: 0.6rem;
+            font-size: 1rem;
+            min-width: 18px;
+        }
+        .gallery-container {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 1.2rem;
+            border: 2px solid #f0f0f0;
+            box-shadow: 0 12px 45px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            min-height: 600px;
+        }
+        .gallery-container:hover {
+            box-shadow: 0 18px 60px rgba(0, 0, 0, 0.12);
+        }
+        .gallery-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+        .gallery-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), #e6c94a);
+            border-radius: 3px;
+        }
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            animation: fadeIn 0.8s ease;
+        }
+        @media (max-width: 1024px) {
+            .images-grid {
+                gap: 2rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .images-grid {
+                grid-template-columns: 1fr;
+                gap: 1.8rem;
+            }
+        }
+        .gallery-img {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.8rem;
+            height: 300px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+            border: 1px solid #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f9f9f9;
+        }
+        .gallery-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0) 0%, rgba(212, 175, 55, 0.12) 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .gallery-img:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 18px 50px rgba(212, 175, 55, 0.3);
+        }
+        .gallery-img:hover::before {
+            opacity: 1;
+        }
+        .gallery-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: block;
+        }
+        .gallery-img:hover img {
+            transform: scale(1.1) rotate(0.5deg);
+        }
+        .gallery-img.animate-in {
+            animation: slideInImage 0.6s ease forwards;
+        }
+        @keyframes slideInImage {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes slideInBtn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .category-btn:nth-child(1) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.05s both; }
+        .category-btn:nth-child(2) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both; }
+        .category-btn:nth-child(3) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both; }
+        .category-btn:nth-child(4) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both; }
+        .category-btn:nth-child(5) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s both; }
+        .category-btn:nth-child(6) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both; }
+        .category-btn:nth-child(7) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s both; }
+        .category-btn:nth-child(8) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both; }
+        .category-btn:nth-child(9) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s both; }
+        .category-btn:nth-child(10) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s both; }
+        .category-btn:nth-child(11) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.55s both; }
+        .category-btn:nth-child(12) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s both; }
+        .category-btn:nth-child(13) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.65s both; }
+        .category-btn:nth-child(14) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s both; }
+        .category-btn:nth-child(15) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.75s both; }
+        @keyframes slideInBtn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border position-relative text-primary" style="width: 6rem; height: 6rem;" role="status"></div>
+        <img class="position-absolute top-50 start-50 translate-middle" src="img/icons/icon-1.png" alt="Icon">
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark p-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-3">
+                    <a class="text-body px-2" href="tel:+919876543210"><i class="fa fa-phone-alt text-primary me-2"></i>+91-987 654 3210</a>
+                    <a class="text-body px-2" href="mailto:hello@ghenterprises.com"><i class="fa fa-envelope-open text-primary me-2"></i>hello@ghenterprises.com</a>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-2">
+                    <a class="text-body px-2" href="">Terms</a>
+                    <a class="text-body px-2" href="">Privacy</a>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <a class="btn btn-sm-square btn-outline-body me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-sm-square btn-outline-body me-1" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-sm-square btn-outline-body me-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-sm-square btn-outline-body me-0" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+            <h1 class="text-primary m-0"><img class="me-3" src="img/icons/icon-1.png" alt="Icon">GH Enterprises</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="service.html" class="nav-item nav-link">Services</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu border-0 m-0">
+                        <a href="project.html" class="dropdown-item active">Our Portfolio</a>
+                        <a href="manufacturingunit.html" class="dropdown-item">Manufacturing Unit</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary py-2 px-4 d-none d-lg-block">Get In Touch</a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <h1 class="display-1 text-white animated slideInDown">Projects</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb text-uppercase mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Projects</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+
+    <!-- Portfolio Gallery Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                <h4 class="section-title">Portfolio Gallery</h4>
+                <h1 class="display-5 mb-4">Manufacturing & Installation Examples</h1>
+                <p class="mb-4">A curated gallery of our manufactured components and completed installations — categorized by kitchen and wardrobe types and factory images.</p>
+            </div>
+
+            <!-- Two-Column Portfolio: Categories + Gallery -->
+            <div class="portfolio-container">
+                <!-- Left: Category Carousel -->
+                <div class="category-carousel">
+                    <button class="category-btn active" onclick="showCategory(this, 'c-shape')"><i class="fa fa-cube"></i>C Shape Kitchens</button>
+                    <button class="category-btn" onclick="showCategory(this, 'crockery')"><i class="fa fa-cube"></i>Crockery Cabinet</button>
+                    <button class="category-btn" onclick="showCategory(this, 'rendered')"><i class="fa fa-cube"></i>Rendered Designs</button>
+                    <button class="category-btn" onclick="showCategory(this, 'island')"><i class="fa fa-cube"></i>Island Kitchens</button>
+                    <button class="category-btn" onclick="showCategory(this, 'kids')"><i class="fa fa-cube"></i>Kids Room</button>
+                    <button class="category-btn" onclick="showCategory(this, 'l-shape')"><i class="fa fa-cube"></i>L Shape Kitchen</button>
+                    <button class="category-btn" onclick="showCategory(this, 'living')"><i class="fa fa-cube"></i>Living Room</button>
+                    <button class="category-btn" onclick="showCategory(this, 'factory')"><i class="fa fa-industry"></i>Factory & Machines</button>
+                    <button class="category-btn" onclick="showCategory(this, 'openable')"><i class="fa fa-cube"></i>Openable Wardrobes</button>
+                    <button class="category-btn" onclick="showCategory(this, 'parallel')"><i class="fa fa-cube"></i>Parallel Kitchens</button>
+                    <button class="category-btn" onclick="showCategory(this, 'sliding')"><i class="fa fa-cube"></i>Sliding Wardrobes</button>
+                    <button class="category-btn" onclick="showCategory(this, 'space-bed')"><i class="fa fa-cube"></i>Space Saving Bed</button>
+                    <button class="category-btn" onclick="showCategory(this, 'straight')"><i class="fa fa-cube"></i>Straight Line Kitchens</button>
+                    <button class="category-btn" onclick="showCategory(this, 'u-shape')"><i class="fa fa-cube"></i>U Shape Kitchens</button>
+                    <button class="category-btn" onclick="showCategory(this, 'walk-in')"><i class="fa fa-cube"></i>Walk-in Wardrobes</button>
+                </div>
+
+                <!-- Right: Image Gallery -->
+                <div class="gallery-container">
+                    <h3 class="gallery-title" id="galleryTitle">C Shape Kitchens</h3>
+                    <div class="images-grid" id="galleryImages">
+                        <!-- Images will be populated here via JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Portfolio Gallery End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-body footer mt-5 pt-5 px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-light mb-4">Address</h3>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>123 Street, New York, USA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@example.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-body me-1" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-body me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-body me-1" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-body me-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-light mb-4">Services</h3>
+                    <a class="btn btn-link" href="">Architecture</a>
+                    <a class="btn btn-link" href="">3D Animation</a>
+                    <a class="btn btn-link" href="">House Planning</a>
+                    <a class="btn btn-link" href="">Interior Design</a>
+                    <a class="btn btn-link" href="">Construction</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-light mb-4">Quick Links</h3>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-light mb-4">Newsletter</h3>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; GH Enterprises, All Rights Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        Made with <span style="color: #D4AF37;">❤️</span> by <strong>TENSPICK</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Portfolio Category Gallery -->
+    <script>
+        // Portfolio image data mapping
+        const portfolioData = {
+            'c-shape': {
+                title: 'C Shape Kitchens',
+                images: [
+                    'gh images/C SHAPE KITCHENS/1.jpg',
+                    'gh images/C SHAPE KITCHENS/2.jpg',
+                    'gh images/C SHAPE KITCHENS/3.jpg',
+                    'gh images/C SHAPE KITCHENS/4.jpg'
+                ]
+            },
+            'crockery': {
+                title: 'Crockery Cabinet',
+                images: [
+                    'gh images/Crockery Cabinet/49.jpg',
+                    'gh images/Crockery Cabinet/50.jpg',
+                    'gh images/Crockery Cabinet/51.jpg',
+                    'gh images/Crockery Cabinet/52.jpg'
+                ]
+            },
+            'rendered': {
+                title: 'Rendered C Shape Kitchens',
+                images: [
+                    'gh images/dequalita.com - c shape kitchens rendered images/2.jpg',
+                    'gh images/dequalita.com - c shape kitchens rendered images/3.jpg',
+                    'gh images/dequalita.com - c shape kitchens rendered images/4.jpg',
+                    'gh images/dequalita.com - c shape kitchens rendered images/5.jpg'
+                ]
+            },
+            'island': {
+                title: 'Island Kitchens',
+                images: [
+                    'gh images/ISLAND KITCHENS/17.jpg',
+                    'gh images/ISLAND KITCHENS/18.jpg',
+                    'gh images/ISLAND KITCHENS/19.jpg',
+                    'gh images/ISLAND KITCHENS/20.jpg'
+                ]
+            },
+            'kids': {
+                title: 'Kids Room',
+                images: [
+                    'gh images/kids room/45.jpg',
+                    'gh images/kids room/46.jpg',
+                    'gh images/kids room/47.jpg',
+                    'gh images/kids room/48.jpg'
+                ]
+            },
+            'l-shape': {
+                title: 'L Shape Kitchen',
+                images: [
+                    'gh images/L SHAPE KITCHEN/9.jpg',
+                    'gh images/L SHAPE KITCHEN/10.jpg',
+                    'gh images/L SHAPE KITCHEN/11.jpg',
+                    'gh images/L SHAPE KITCHEN/12.jpg'
+                ]
+            },
+            'living': {
+                title: 'Living Room',
+                images: [
+                    'gh images/Living Room/41.jpg',
+                    'gh images/Living Room/42.jpg',
+                    'gh images/Living Room/43.jpg',
+                    'gh images/Living Room/44.jpg'
+                ]
+            },
+            'factory': {
+                title: 'Factory & Machines',
+                images: [
+                    'gh images/machines and factory top view/53.jpg',
+                    'gh images/machines and factory top view/54.jpg',
+                    'gh images/machines and factory top view/55.jpg',
+                    'gh images/machines and factory top view/56.jpg',
+                    'gh images/machines and factory top view/57.jpg',
+                    'gh images/machines and factory top view/58.jpg',
+                    'gh images/machines and factory top view/59.jpg',
+                    'gh images/machines and factory top view/60.jpg'
+                ]
+            },
+            'openable': {
+                title: 'Openable Wardrobes',
+                images: [
+                    'gh images/Openable wardrobes/25.jpg',
+                    'gh images/Openable wardrobes/26.jpg',
+                    'gh images/Openable wardrobes/27.jpg',
+                    'gh images/Openable wardrobes/28.jpg'
+                ]
+            },
+            'parallel': {
+                title: 'Parallel Kitchens',
+                images: [
+                    'gh images/PARALLEL KITCHENS/21.jpg',
+                    'gh images/PARALLEL KITCHENS/22.jpg',
+                    'gh images/PARALLEL KITCHENS/23.jpg',
+                    'gh images/PARALLEL KITCHENS/24.jpg'
+                ]
+            },
+            'sliding': {
+                title: 'Sliding Wardrobes',
+                images: [
+                    'gh images/Sliding wardrobes/29.jpg',
+                    'gh images/Sliding wardrobes/30.jpg',
+                    'gh images/Sliding wardrobes/31.jpg',
+                    'gh images/Sliding wardrobes/32.jpg'
+                ]
+            },
+            'space-bed': {
+                title: 'Space Saving Bed',
+                images: [
+                    'gh images/Space saving bed/37.jpg',
+                    'gh images/Space saving bed/38.jpg',
+                    'gh images/Space saving bed/39.jpg',
+                    'gh images/Space saving bed/40.jpg'
+                ]
+            },
+            'straight': {
+                title: 'Straight Line Kitchens',
+                images: [
+                    'gh images/STRAIGHT LINE KITCHENS/5.jpg',
+                    'gh images/STRAIGHT LINE KITCHENS/6.jpg',
+                    'gh images/STRAIGHT LINE KITCHENS/7.jpg',
+                    'gh images/STRAIGHT LINE KITCHENS/8.jpg'
+                ]
+            },
+            'u-shape': {
+                title: 'U Shape Kitchens',
+                images: [
+                    'gh images/U SHAPE KITCHENS/13.jpg',
+                    'gh images/U SHAPE KITCHENS/14.jpg',
+                    'gh images/U SHAPE KITCHENS/15.jpg',
+                    'gh images/U SHAPE KITCHENS/16.jpg'
+                ]
+            },
+            'walk-in': {
+                title: 'Walk-in Wardrobes',
+                images: [
+                    'gh images/Walk-in wardrobes/33.jpg',
+                    'gh images/Walk-in wardrobes/34.jpg',
+                    'gh images/Walk-in wardrobes/35.jpg',
+                    'gh images/Walk-in wardrobes/36.jpg'
+                ]
+            }
+        };
+
+        // Function to show category images
+        function showCategory(button, categoryId) {
+            // Update active button
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            button.classList.add('active');
+
+            // Get category data
+            const category = portfolioData[categoryId];
+            if (!category) return;
+
+            // Update title with animation
+            const titleElement = document.getElementById('galleryTitle');
+            titleElement.style.opacity = '0';
+            titleElement.style.transform = 'translateY(-10px)';
+            
+            setTimeout(() => {
+                titleElement.textContent = category.title;
+                titleElement.style.transition = 'all 0.4s ease';
+                titleElement.style.opacity = '1';
+                titleElement.style.transform = 'translateY(0)';
+            }, 200);
+
+            // Populate images
+            const galleryImages = document.getElementById('galleryImages');
+            galleryImages.innerHTML = '';
+
+            category.images.forEach((imagePath, index) => {
+                const imgDiv = document.createElement('div');
+                imgDiv.className = 'gallery-img animate-in';
+                imgDiv.style.animationDelay = (index * 0.12) + 's';
+                
+                const img = document.createElement('img');
+                img.src = imagePath;
+                img.alt = category.title + ' - ' + (index + 1);
+                img.style.display = 'block';
+                
+                imgDiv.appendChild(img);
+                galleryImages.appendChild(imgDiv);
+            });
+        }
+
+        // Initialize with first category on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstButton = document.querySelector('.category-btn.active');
+            if (firstButton) {
+                showCategory(firstButton, 'c-shape');
+            }
+        });
+    </script>
+</body>
+
+</html>
