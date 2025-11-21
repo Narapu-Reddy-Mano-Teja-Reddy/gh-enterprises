@@ -29,9 +29,6 @@
     });
 
 
-
-
-
     // Facts counter
     $('[data-toggle="counter-up"]').counterUp({
         delay: 10,
@@ -71,6 +68,36 @@
         dotsData: true,
     });
 
+    // Form Validation and Submission
+    function handleFormSubmit(formId, successMessage) {
+        var form = $(formId);
+        if (form.length === 0) return;
+
+        form.on('submit', function (e) {
+            e.preventDefault();
+
+            if (this.checkValidity() === false) {
+                e.stopPropagation();
+                form.addClass('was-validated');
+                return;
+            }
+
+            // Simulate submission
+            var btn = form.find('button[type="submit"]');
+            var originalText = btn.text();
+            btn.prop('disabled', true).text('Sending...');
+
+            setTimeout(function () {
+                alert(successMessage);
+                form[0].reset();
+                form.removeClass('was-validated');
+                btn.prop('disabled', false).text(originalText);
+            }, 1500);
+        });
+    }
+
+    handleFormSubmit('#appointmentForm', 'Thank you! Your appointment request has been sent. We will contact you shortly.');
+    handleFormSubmit('#contactForm', 'Thank you! Your message has been sent. We will get back to you soon.');
+
 
 })(jQuery);
-
