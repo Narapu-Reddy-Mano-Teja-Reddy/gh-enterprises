@@ -29,27 +29,81 @@ h6,
     font-weight: 400 !important;
 }
 
-.back-to-top {
-    position: fixed;
-    display: none;
-    right: 30px;
-    bottom: 30px;
-    z-index: 99;
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.footer {
+    margin-bottom: 0 !important;
 }
 
 
 /*** Spinner ***/
+/*** Spinner ***/
 #spinner {
     opacity: 0;
     visibility: hidden;
-    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    transition: opacity .8s ease-out, visibility 0s linear .8s;
     z-index: 99999;
+    background-color: #ffffff !important;
+    /* Override Bootstrap positioning to ensure full screen coverage */
+    transform: none !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    position: fixed !important;
 }
 
 #spinner.show {
-    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    transition: opacity .8s ease-out, visibility 0s linear 0s;
     visibility: visible;
     opacity: 1;
+}
+
+#spinner .spinner-border {
+    width: 8rem !important;
+    height: 8rem !important;
+    border-width: 5px;
+    border-color: var(--primary) transparent var(--primary) transparent;
+    animation: spinner-rotate 1.5s linear infinite;
+}
+
+#spinner img {
+    animation: pulse-logo 2s infinite ease-in-out;
+    max-height: 60px;
+}
+
+@keyframes spinner-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse-logo {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
 }
 
 
@@ -157,7 +211,7 @@ h6,
 }
 
 .navbar.sticky-top {
-    top: -100px;
+    top: 0;
     transition: .5s;
 }
 
@@ -586,9 +640,20 @@ h6,
 
 /*** Enhanced Animations & Transitions ***/
 
-/* Smooth transitions for all elements */
-* {
+/* Smooth transitions for all elements - REMOVED to fix blinking */
+/* * {
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+} */
+
+.logo-img {
+    max-height: 50px;
+    width: auto;
+}
+
+@media (max-width: 991.98px) {
+    .logo-img {
+        max-height: 40px;
+    }
 }
 
 /* Link hover animations */
@@ -658,6 +723,7 @@ img {
     from {
         width: 0;
     }
+
     to {
         width: 60px;
     }
@@ -669,6 +735,7 @@ img {
         opacity: 0;
         transform: translateX(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -677,9 +744,12 @@ img {
 
 /* Pulse animation for CTAs */
 @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
     }
+
     50% {
         box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
     }
@@ -724,6 +794,7 @@ img {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -755,8 +826,125 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Ensure elements are visible when WOW is disabled */
+.wow {
+    visibility: visible !important;
+    animation: none !important;
+    opacity: 1 !important;
+}
+
+/*** Mobile Responsive & UI/UX Enhancements ***/
+@media (max-width: 991.98px) {
+
+    /* Typography */
+    h1.display-1 {
+        font-size: 3rem;
+        font-weight: 700;
+    }
+
+    h1.display-5 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+    }
+
+    /* Spacing */
+    .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    .mb-5 {
+        margin-bottom: 2rem !important;
+    }
+
+    /* Navbar */
+    .navbar-brand h1 {
+        font-size: 1.5rem;
+    }
+
+    .navbar-toggler {
+        border: none;
+        padding: 0.5rem;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none;
+        outline: 2px solid var(--primary);
+    }
+
+    /* Carousel */
+    .header-carousel .owl-carousel-item {
+        min-height: 400px;
+    }
+
+    .header-carousel .owl-carousel-item img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .header-carousel .owl-carousel-item h1 {
+        font-size: 2.5rem;
+    }
+
+    .header-carousel .owl-carousel-item p {
+        font-size: 1rem !important;
+        display: none;
+        /* Hide long text on mobile for cleaner look */
+    }
+
+    .header-carousel .btn {
+        padding: 0.8rem 2rem;
+        font-size: 0.9rem;
+    }
+
+    /* Services & Facts */
+    .fact-item,
+    .service-item {
+        padding: 2rem !important;
+    }
+
+    .fact-icon {
+        width: 80px !important;
+        height: 80px !important;
+        margin-top: -40px !important;
+    }
+
+    .fact-icon img {
+        width: 40px;
+    }
+
+    /* Footer */
+    .footer .row {
+        text-align: center;
+    }
+
+    .footer .text-md-start,
+    .footer .text-md-end {
+        text-align: center !important;
+    }
+
+    .footer .d-flex.pt-2 {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    h1.display-1 {
+        font-size: 2.5rem;
+    }
+
+    .header-carousel .owl-carousel-item {
+        min-height: 350px;
     }
 }

@@ -9,12 +9,14 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="img/icons/icon-1.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Teko:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Teko:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -40,18 +42,21 @@
             align-items: start;
             margin-top: 2rem;
         }
+
         @media (max-width: 1024px) {
             .portfolio-container {
                 grid-template-columns: 300px 1fr;
                 gap: 2.5rem;
             }
         }
+
         @media (max-width: 768px) {
             .portfolio-container {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
         }
+
         .category-carousel {
             display: flex;
             flex-direction: column;
@@ -62,20 +67,25 @@
             scrollbar-width: thin;
             scrollbar-color: var(--primary) #f0f0f0;
         }
+
         .category-carousel::-webkit-scrollbar {
             width: 6px;
         }
+
         .category-carousel::-webkit-scrollbar-track {
             background: #f0f0f0;
             border-radius: 10px;
         }
+
         .category-carousel::-webkit-scrollbar-thumb {
             background: var(--primary);
             border-radius: 10px;
         }
+
         .category-carousel::-webkit-scrollbar-thumb:hover {
             background: #c99819;
         }
+
         .category-btn {
             padding: 0.9rem 1.2rem;
             background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
@@ -93,6 +103,7 @@
             white-space: nowrap;
             flex-shrink: 0;
         }
+
         .category-btn::before {
             content: '';
             position: absolute;
@@ -104,6 +115,7 @@
             transition: width 0.5s ease;
             z-index: -1;
         }
+
         .category-btn::after {
             content: '';
             position: absolute;
@@ -116,6 +128,7 @@
             transition: right 0.5s ease;
             z-index: -1;
         }
+
         .category-btn:hover,
         .category-btn.active {
             border-color: var(--primary);
@@ -123,18 +136,22 @@
             box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
             transform: translateX(6px);
         }
+
         .category-btn:hover::before,
         .category-btn.active::before {
             width: 100%;
         }
+
         .category-btn:hover::after {
             right: 100%;
         }
+
         .category-btn i {
             margin-right: 0.6rem;
             font-size: 1rem;
             min-width: 18px;
         }
+
         .gallery-container {
             background: white;
             padding: 2.5rem;
@@ -144,9 +161,11 @@
             transition: all 0.4s ease;
             min-height: 600px;
         }
+
         .gallery-container:hover {
             box-shadow: 0 18px 60px rgba(0, 0, 0, 0.12);
         }
+
         .gallery-title {
             font-size: 1.9rem;
             font-weight: 700;
@@ -156,6 +175,7 @@
             padding-bottom: 1rem;
             letter-spacing: -0.5px;
         }
+
         .gallery-title::after {
             content: '';
             position: absolute;
@@ -166,23 +186,27 @@
             background: linear-gradient(90deg, var(--primary), #e6c94a);
             border-radius: 3px;
         }
+
         .images-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2.5rem;
             animation: fadeIn 0.8s ease;
         }
+
         @media (max-width: 1024px) {
             .images-grid {
                 gap: 2rem;
             }
         }
+
         @media (max-width: 768px) {
             .images-grid {
                 grid-template-columns: 1fr;
                 gap: 1.8rem;
             }
         }
+
         .gallery-img {
             position: relative;
             overflow: hidden;
@@ -197,6 +221,7 @@
             justify-content: center;
             background: #f9f9f9;
         }
+
         .gallery-img::before {
             content: '';
             position: absolute;
@@ -210,13 +235,16 @@
             z-index: 2;
             pointer-events: none;
         }
+
         .gallery-img:hover {
             transform: translateY(-15px);
             box-shadow: 0 18px 50px rgba(212, 175, 55, 0.3);
         }
+
         .gallery-img:hover::before {
             opacity: 1;
         }
+
         .gallery-img img {
             width: 100%;
             height: 100%;
@@ -224,60 +252,115 @@
             transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
             display: block;
         }
+
         .gallery-img:hover img {
             transform: scale(1.1) rotate(0.5deg);
         }
+
         .gallery-img.animate-in {
             animation: slideInImage 0.6s ease forwards;
         }
+
         @keyframes slideInImage {
             from {
                 opacity: 0;
                 transform: translateY(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
         @keyframes slideInBtn {
             from {
                 opacity: 0;
                 transform: translateX(-30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
         }
-        .category-btn:nth-child(1) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.05s both; }
-        .category-btn:nth-child(2) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both; }
-        .category-btn:nth-child(3) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both; }
-        .category-btn:nth-child(4) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both; }
-        .category-btn:nth-child(5) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s both; }
-        .category-btn:nth-child(6) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both; }
-        .category-btn:nth-child(7) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s both; }
-        .category-btn:nth-child(8) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both; }
-        .category-btn:nth-child(9) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s both; }
-        .category-btn:nth-child(10) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s both; }
-        .category-btn:nth-child(11) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.55s both; }
-        .category-btn:nth-child(12) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s both; }
-        .category-btn:nth-child(13) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.65s both; }
-        .category-btn:nth-child(14) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s both; }
-        .category-btn:nth-child(15) { animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.75s both; }
+
+        .category-btn:nth-child(1) {
+            animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.05s both;
+        }
+
+        .category-btn:nth-child(2) {
+            animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+        }
+
+        .category-btn:nth-child(3) {
+            animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
+        }
+
+        .category-btn:nth-child(4) {
+            animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+        }
+
+        .category-btn:nth-child(5) {
+            animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s both;
+        }
+
+        .category-btn:nth-child(6) {
+            animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+        }
+
+        .category-btn:nth-child(7) {
+            animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s both;
+        }
+
+        .category-btn:nth-child(8) {
+            animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both;
+        }
+
+        .category-btn:nth-child(9) {
+            animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s both;
+        }
+
+        .category-btn:nth-child(10) {
+            animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s both;
+        }
+
+        .category-btn:nth-child(11) {
+            animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.55s both;
+        }
+
+        .category-btn:nth-child(12) {
+            animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s both;
+        }
+
+        .category-btn:nth-child(13) {
+            animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.65s both;
+        }
+
+        .category-btn:nth-child(14) {
+            animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s both;
+        }
+
+        .category-btn:nth-child(15) {
+            animation: slideInBtn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.75s both;
+        }
+
         @keyframes slideInBtn {
             from {
                 opacity: 0;
                 transform: translateX(-30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -288,8 +371,10 @@
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border position-relative text-primary" style="width: 6rem; height: 6rem;" role="status"></div>
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border position-relative text-primary" style="width: 6rem; height: 6rem;" role="status">
+        </div>
         <img class="position-absolute top-50 start-50 translate-middle" src="img/icons/icon-1.png" alt="Icon">
     </div>
     <!-- Spinner End -->
@@ -300,8 +385,10 @@
         <div class="row gx-0 d-none d-lg-flex">
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-3">
-                    <a class="text-body px-2" href="tel:+919876543210"><i class="fa fa-phone-alt text-primary me-2"></i>+91-987 654 3210</a>
-                    <a class="text-body px-2" href="mailto:hello@ghenterprises.com"><i class="fa fa-envelope-open text-primary me-2"></i>hello@ghenterprises.com</a>
+                    <a class="text-body px-2" href="tel:+919876543210"><i
+                            class="fa fa-phone-alt text-primary me-2"></i>+91-987 654 3210</a>
+                    <a class="text-body px-2" href="mailto:hello@ghenterprises.com"><i
+                            class="fa fa-envelope-open text-primary me-2"></i>hello@ghenterprises.com</a>
                 </div>
             </div>
             <div class="col-lg-5 px-5 text-end">
@@ -322,9 +409,10 @@
 
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-lg-5 wow fadeIn"
+        data-wow-delay="0.1s">
         <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
-            <h1 class="text-primary m-0"><img class="me-3" src="img/icons/icon-1.png" alt="Icon">GH Enterprises</h1>
+            <h1 class="text-primary m-0"><img class="me-3 logo-img" src="img/icons/icon-1.png" alt="Icon"></h1>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -372,28 +460,44 @@
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
                 <h4 class="section-title">Portfolio Gallery</h4>
                 <h1 class="display-5 mb-4">Manufacturing & Installation Examples</h1>
-                <p class="mb-4">A curated gallery of our manufactured components and completed installations — categorized by kitchen and wardrobe types and factory images.</p>
+                <p class="mb-4">A curated gallery of our manufactured components and completed installations —
+                    categorized by kitchen and wardrobe types and factory images.</p>
             </div>
 
             <!-- Two-Column Portfolio: Categories + Gallery -->
             <div class="portfolio-container">
                 <!-- Left: Category Carousel -->
                 <div class="category-carousel">
-                    <button class="category-btn active" onclick="showCategory(this, 'c-shape')"><i class="fa fa-cube"></i>C Shape Kitchens</button>
-                    <button class="category-btn" onclick="showCategory(this, 'crockery')"><i class="fa fa-cube"></i>Crockery Cabinet</button>
-                    <button class="category-btn" onclick="showCategory(this, 'rendered')"><i class="fa fa-cube"></i>Rendered Designs</button>
-                    <button class="category-btn" onclick="showCategory(this, 'island')"><i class="fa fa-cube"></i>Island Kitchens</button>
-                    <button class="category-btn" onclick="showCategory(this, 'kids')"><i class="fa fa-cube"></i>Kids Room</button>
-                    <button class="category-btn" onclick="showCategory(this, 'l-shape')"><i class="fa fa-cube"></i>L Shape Kitchen</button>
-                    <button class="category-btn" onclick="showCategory(this, 'living')"><i class="fa fa-cube"></i>Living Room</button>
-                    <button class="category-btn" onclick="showCategory(this, 'factory')"><i class="fa fa-industry"></i>Factory & Machines</button>
-                    <button class="category-btn" onclick="showCategory(this, 'openable')"><i class="fa fa-cube"></i>Openable Wardrobes</button>
-                    <button class="category-btn" onclick="showCategory(this, 'parallel')"><i class="fa fa-cube"></i>Parallel Kitchens</button>
-                    <button class="category-btn" onclick="showCategory(this, 'sliding')"><i class="fa fa-cube"></i>Sliding Wardrobes</button>
-                    <button class="category-btn" onclick="showCategory(this, 'space-bed')"><i class="fa fa-cube"></i>Space Saving Bed</button>
-                    <button class="category-btn" onclick="showCategory(this, 'straight')"><i class="fa fa-cube"></i>Straight Line Kitchens</button>
-                    <button class="category-btn" onclick="showCategory(this, 'u-shape')"><i class="fa fa-cube"></i>U Shape Kitchens</button>
-                    <button class="category-btn" onclick="showCategory(this, 'walk-in')"><i class="fa fa-cube"></i>Walk-in Wardrobes</button>
+                    <button class="category-btn active" onclick="showCategory(this, 'c-shape')"><i
+                            class="fa fa-cube"></i>C Shape Kitchens</button>
+                    <button class="category-btn" onclick="showCategory(this, 'crockery')"><i
+                            class="fa fa-cube"></i>Crockery Cabinet</button>
+                    <button class="category-btn" onclick="showCategory(this, 'rendered')"><i
+                            class="fa fa-cube"></i>Rendered Designs</button>
+                    <button class="category-btn" onclick="showCategory(this, 'island')"><i class="fa fa-cube"></i>Island
+                        Kitchens</button>
+                    <button class="category-btn" onclick="showCategory(this, 'kids')"><i class="fa fa-cube"></i>Kids
+                        Room</button>
+                    <button class="category-btn" onclick="showCategory(this, 'l-shape')"><i class="fa fa-cube"></i>L
+                        Shape Kitchen</button>
+                    <button class="category-btn" onclick="showCategory(this, 'living')"><i class="fa fa-cube"></i>Living
+                        Room</button>
+                    <button class="category-btn" onclick="showCategory(this, 'factory')"><i
+                            class="fa fa-industry"></i>Factory & Machines</button>
+                    <button class="category-btn" onclick="showCategory(this, 'openable')"><i
+                            class="fa fa-cube"></i>Openable Wardrobes</button>
+                    <button class="category-btn" onclick="showCategory(this, 'parallel')"><i
+                            class="fa fa-cube"></i>Parallel Kitchens</button>
+                    <button class="category-btn" onclick="showCategory(this, 'sliding')"><i
+                            class="fa fa-cube"></i>Sliding Wardrobes</button>
+                    <button class="category-btn" onclick="showCategory(this, 'space-bed')"><i
+                            class="fa fa-cube"></i>Space Saving Bed</button>
+                    <button class="category-btn" onclick="showCategory(this, 'straight')"><i
+                            class="fa fa-cube"></i>Straight Line Kitchens</button>
+                    <button class="category-btn" onclick="showCategory(this, 'u-shape')"><i class="fa fa-cube"></i>U
+                        Shape Kitchens</button>
+                    <button class="category-btn" onclick="showCategory(this, 'walk-in')"><i
+                            class="fa fa-cube"></i>Walk-in Wardrobes</button>
                 </div>
 
                 <!-- Right: Image Gallery -->
@@ -445,8 +549,10 @@
                     <h3 class="text-light mb-4">Newsletter</h3>
                     <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
+                            placeholder="Your email">
+                        <button type="button"
+                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
                 </div>
             </div>
@@ -467,8 +573,7 @@
     <!-- Footer End -->
 
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
 
 
     <!-- JavaScript Libraries -->
@@ -647,7 +752,7 @@
             const titleElement = document.getElementById('galleryTitle');
             titleElement.style.opacity = '0';
             titleElement.style.transform = 'translateY(-10px)';
-            
+
             setTimeout(() => {
                 titleElement.textContent = category.title;
                 titleElement.style.transition = 'all 0.4s ease';
@@ -663,19 +768,19 @@
                 const imgDiv = document.createElement('div');
                 imgDiv.className = 'gallery-img animate-in';
                 imgDiv.style.animationDelay = (index * 0.12) + 's';
-                
+
                 const img = document.createElement('img');
                 img.src = imagePath;
                 img.alt = category.title + ' - ' + (index + 1);
                 img.style.display = 'block';
-                
+
                 imgDiv.appendChild(img);
                 galleryImages.appendChild(imgDiv);
             });
         }
 
         // Initialize with first category on page load
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const firstButton = document.querySelector('.category-btn.active');
             if (firstButton) {
                 showCategory(firstButton, 'c-shape');
